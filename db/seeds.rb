@@ -1,8 +1,8 @@
 puts "Creating users..."
-user_bethy = User.create(email: "bethy@gmail.com", password: "secret", name: "Bethy")
-user_simon = User.create(email: "simon@gmail.com", password: "secret", name: "Simon")
-user_ale = User.create(email: "ale@gmail.com", password: "secret", name: "Ale")
-user_milo = User.create(email: "milo@gmail.com", password: "secret", name: "Milo")
+user_bethy = User.create(email: "bethy@gmail.com", password: "secret", username: "Bethy")
+user_simon = User.create(email: "simon@gmail.com", password: "secret", username: "Simon")
+user_ale = User.create(email: "ale@gmail.com", password: "secret", username: "Ale")
+user_milo = User.create(email: "milo@gmail.com", password: "secret", username: "Milo")
 
 puts "Creating brands..."
 la_cabra = Brand.create(
