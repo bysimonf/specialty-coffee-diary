@@ -80,6 +80,7 @@ Coffee.create(
   brew_recipe: "WILL BE FILLED LATER",
   origin: "Kenya",
   description: "Carefully processed to bring out its full flavour and aroma, delivering a truly enjoyable cup of coffee.",
+  flavor: "Rich and sweet with a fruity acidity",
   processing: "Washed",
   user_id: user_mlilo.id,
   brand_id: coffee_collective.id,
