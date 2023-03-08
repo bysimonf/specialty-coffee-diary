@@ -8,5 +8,6 @@
   <%= f.input :brew_method, collection: Coffee::BREW_METHODS, prompt: "Choose a Brew Method" %>
   <%= f.input :brew_recipe %>
   <%= f.input :flavor %>
+  <%= f.input :image, as: :file %>
   <%= f.submit %>
 <% end %>

@@ -1,5 +1,12 @@
-<h1><%= coffee.name %></h1>
-
 <% if user_signed_in? %>
   <%= link_to "Save this coffee", coffee_bookmarks_path(@coffee), method: :post, data: {turbo_method: :post}, class: "btn" %>
 <% end %>
+<% if coffee.image.attached? %>
+  <% image_coffee = cl_image_path coffee.image.key %>
+<% else %>
+  <% image_coffee = "https://res.cloudinary.com/dak3altpj/image/upload/v1678206484/development/y7vy91bf6jgac7xgz070jr9h68ez.png"  %>
+<% end %>
+<div class="card-preview"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( '<%= image_coffee %>')">
+  <h1><%= coffee.name %></h1>
+</div>
