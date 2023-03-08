@@ -1,5 +1,8 @@
-<h1><%= coffee.name %></h1>
-
 <% if user_signed_in? %>
   <%= link_to "Save this coffee", coffee_bookmarks_path(@coffee), method: :post, data: {turbo_method: :post}, class: "btn" %>
 <% end %>
+
+<div class="card-preview"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( '<%= cl_image_path coffee.image.key if coffee.image.key %>')">
+  <h1><%= coffee.name %></h1>
+</div>

@@ -64,12 +64,14 @@ lacabra = Coffee.new(
   user_id: user_simon.id,
   brand_id: la_cabra.id,
   producer_id: ana_mustafá.id,
-  image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png"
+  # image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png"
 )
-# file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
+file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
 
-# lacabra.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
+lacabra.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
 lacabra.save!
+
+puts "lacabra created"
 
 bukeye = Coffee.new(
   name: "Bukeye",
@@ -82,11 +84,14 @@ bukeye = Coffee.new(
   user_id: user_bethy.id,
   brand_id: sey.id,
   producer_id: lance_shnorenberg.id,
-  image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678206487/development/6vkv5c1gj33ibbgsjreb1n83qijb.png"
+  # image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678206487/development/6vkv5c1gj33ibbgsjreb1n83qijb.png"
 )
-# file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202252/tj183hemvf3ihts65woy.png")
-# bukeye.image.attach(io: file, filename: "bukeye.png", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202252/tj183hemvf3ihts65woy.png")
+bukeye.image.attach(io: file, filename: "bukeye.png", content_type: "image/png")
 bukeye.save!
+
+puts "bukeye created"
+
 
 kii = Coffee.new(
   name: "Kii",
@@ -99,10 +104,13 @@ kii = Coffee.new(
   user_id: user_milo.id,
   brand_id: coffee_collective.id,
   producer_id: peter_dupont.id,
-  image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png"
+  # image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png"
 )
-# file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
-# kii.image.attach(io: file, filename: "kii.png", content_type: "image/png")
+file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
+kii.image.attach(io: file, filename: "kii.png", content_type: "image/png")
 kii.save!
+
+puts "kii created"
+
 
 puts "Done!"
