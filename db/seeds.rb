@@ -30,6 +30,12 @@ coffee_collective = Brand.create!(
   their own coffee shops, subscribers and web shop customers"
 )
 
+tomoca= Brand.create!(
+  name: "Tomoca",
+  description: "Tomoca coffee is established in 1953, in Addis Ababa – Ethiopia.
+  The acronym TO.MO.CA is derived from the Italian Torrefazione Moderna café, which means modern coffee roasting. "
+)
+
 puts "Creating producers..."
 ana_mustafá = Producer.create!(
   name: "Ana Mustafá",
@@ -53,6 +59,13 @@ peter_dupont = Producer.create!(
   address: "Kenya"
 )
 
+wondwossen_meshesha = Producer.create!(
+  name: "wondwossen_meshesha",
+  description: "The Coffee Collective is to this day 100% owned and run by Peter N. Dupont,
+  Casper Engel Rasmussen and Klaus Thomsen.",
+  address: "Ethiopia"
+)
+
 puts "Creating coffees..."
 
 lacabra = Coffee.new(
@@ -66,8 +79,7 @@ lacabra = Coffee.new(
   processing: "washed",
   user_id: user_simon.id,
   brand_id: la_cabra.id,
-  producer_id: ana_mustafá.id,
-  # image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png"
+  producer_id: ana_mustafá.id
 )
 file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
 
@@ -104,12 +116,30 @@ kii = Coffee.new(
   processing: "washed",
   user_id: user_milo.id,
   brand_id: coffee_collective.id,
-  producer_id: peter_dupont.id,
+  producer_id: peter_dupont.id
 )
 file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
 kii.image.attach(io: file, filename: "kii.png", content_type: "image/png")
 kii.save!
 
 puts "kii created"
+
+tomoca = Coffee.new(
+  name: "Tomoca",
+  brew_method: "espresso",
+  brew_recipe: "250g (8 oz): Makes approx.  25 cups of coffee",
+  origin: "Ethiopia",
+  description: "This is our most popular blend and is renowned for its strong-thick flavor.",
+  flavor: "Fruity-Floral, Grapes & Blueberries with strong-thick flavor",
+  processing: "washed",
+  user_id: user_ale.id,
+  brand_id: tomoca.id,
+  producer_id: wondwossen_meshesha.id
+)
+file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
+tomoca.image.attach(io: file, filename: "tomoca.png", content_type: "image/png")
+tomoca.save!
+
+puts "Tomoca created"
 
 puts "Done!"
