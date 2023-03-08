@@ -2,6 +2,16 @@ class Coffee < ApplicationRecord
   BREW_METHODS = ["omni", "espresso", "filter"]
   PROCESSING = ["natural", "washed", "honey"]
 
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :processing, :brew_method, :flavor, :origin ],
+    associated_against: {
+      brand: [ :name ]
+    },
+    using: {
+      tsearch: { prefix: true } # <- incompletely names will return something
+    }
+
   belongs_to :user
   belongs_to :brand
   belongs_to :producer
