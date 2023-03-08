@@ -1,0 +1,10 @@
+<h1>My bookmarked coffees:</h1>
+
+<div class="cards">
+  <% @bookmarks.each do |bookmark| %>
+    <% coffee = Coffee.find(bookmark["coffee_id"]) %>
+    <%= render "coffees/preview_card_coffee", coffee: coffee %>
+  <% end %>
+</div>
+
+<%= link_to "Back to all coffees", coffees_path, class: "btn" %>

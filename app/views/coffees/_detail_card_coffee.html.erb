@@ -1,1 +1,5 @@
 <h1><%= coffee.name %></h1>
+
+<% if user_signed_in? %>
+  <%= link_to "Save this coffee", coffee_bookmarks_path(@coffee), method: :post, data: {turbo_method: :post}, class: "btn" %>
+<% end %>
