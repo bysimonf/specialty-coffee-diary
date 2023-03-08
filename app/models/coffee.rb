@@ -6,8 +6,8 @@ class Coffee < ApplicationRecord
   belongs_to :brand
   belongs_to :producer
 
-  has_many :bookmarks
-  has_many :reviews
+  has_many :bookmarks, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :name, uniqueness: true, presence: true
   validates :brand, :brew_method, :origin, :flavor, :processing, presence: true

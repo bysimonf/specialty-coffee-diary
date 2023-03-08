@@ -35,19 +35,22 @@ ana_mustafá = Producer.create!(
   name: "Ana Mustafá",
   description: "The farm lands were split up amongst the younger members of the family
   upon his their grandfather's death, leaving Ana the five farms across Risaralda she now
-  oversees along with her cousin; two near La Celia and three near Pereira."
+  oversees along with her cousin; two near La Celia and three near Pereira.",
+  address: "Colombia"
 )
 
 lance_shnorenberg = Producer.create!(
   name: "Tobin Polk and Lance Shnorenberg",
   description: "They are owners and founders of SEY Coffee, are self-taught roasters who got their start with a Probat
-  roaster in a fourth-floor Bushwick loft six years ago."
+  roaster in a fourth-floor Bushwick loft six years ago.",
+  address: "Burundi"
 )
 
 peter_dupont = Producer.create!(
   name: "Peter N. Dupont, Casper Engel Rasmussen and Klaus Thomsen.",
   description: "The Coffee Collective is to this day 100% owned and run by Peter N. Dupont,
-  Casper Engel Rasmussen and Klaus Thomsen."
+  Casper Engel Rasmussen and Klaus Thomsen.",
+  address: "Kenya"
 )
 
 puts "Creating coffees..."
