@@ -4,7 +4,7 @@
   <%= f.association :producer, collection: Producer.all, prompt: "Choose a Producer" %>
   <%= f.input :origin %>
   <%= f.input :description %>
-  <%= f.input :processing, collection: Coffee::PROCESSING, prompt: "Choose a Brew Method" %>
+  <%= f.input :processing, collection: Coffee::PROCESSING, prompt: "Choose a Processing Method" %>
   <%= f.input :brew_method, collection: Coffee::BREW_METHODS, prompt: "Choose a Brew Method" %>
   <%= f.input :brew_recipe %>
   <%= f.input :flavor %>

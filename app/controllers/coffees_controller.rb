@@ -1,6 +1,10 @@
 class CoffeesController < ApplicationController
   def index
-    @coffees = Coffee.all
+    if params[:query].present?
+      @coffees = Coffee.global_search(params[:query])
+    else
+      @coffees = Coffee.all
+    end
   end
 
   def show
