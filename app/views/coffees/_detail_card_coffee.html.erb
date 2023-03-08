@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= link_to "Save this coffee", coffee_bookmarks_path(@coffee), method: :post, data: {turbo_method: :post}, class: "btn" %>
+  <%= link_to "Save this coffee", coffee_bookmarks_path(@coffee), method: :post, data: {turbo_method: :post}, class: "cta-button" %>
 <% end %>
 <% if coffee.image.attached? %>
   <% image_coffee = cl_image_path coffee.image.key %>

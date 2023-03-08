@@ -1,0 +1,19 @@
+.cta-button {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: $call-to-action;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.cta-button:hover {
+  background-color: $hover;
+}
