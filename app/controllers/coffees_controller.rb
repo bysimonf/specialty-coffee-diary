@@ -15,10 +15,6 @@ class CoffeesController < ApplicationController
     @coffee = Coffee.new(coffee_params)
     @user = current_user
     @coffee.user = @user
-    @brand = Brand.find_by(name: params["coffee"]["brand_id"])
-    @coffee.brand = @brand
-    @producer = Producer.find_by(name: params["coffee"]["producer_id"])
-    @coffee.producer = @producer
 
     if @coffee.save
       redirect_to coffee_path(@coffee)
@@ -30,6 +26,6 @@ class CoffeesController < ApplicationController
   private
 
   def coffee_params
-    params.require(:coffee).permit(:name, :brew_method, :brew_recipe, :origin, :description, :flavor, :processing) # relevant for the .new method
+    params.require(:coffee).permit(:name, :brew_method, :brew_recipe, :origin, :description, :flavor, :processing, :brand_id, :producer_id) # needs to be equal to the number of user inputs!
   end
 end
