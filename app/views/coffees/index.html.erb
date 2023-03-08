@@ -7,8 +7,10 @@
   </div>
 </div>
 
+
 <div class="cards">
   <% @coffees.each do |coffee| %>
+
     <%= render "coffees/preview_card_coffee", coffee: coffee %>
   <% end %>
 </div>
