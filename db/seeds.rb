@@ -51,7 +51,7 @@ peter_dupont = Producer.create!(
 puts "Creating coffees..."
 
 
-Coffee.create!(
+lacabra = Coffee.create!(
   name: "Mustafá",
   brew_method: "omni",
   brew_recipe: "Minimum resting period: Filter 7 days / Espresso 14 days",
@@ -64,8 +64,10 @@ Coffee.create!(
   brand_id: la_cabra.id,
   producer_id: ana_mustafá.id
 )
+file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
+lacabra.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
 
-Coffee.create!(
+bukeye = Coffee.create!(
   name: "Bukeye",
   brew_method: "omni",
   brew_recipe: "WILL BE FILLED LATER",
@@ -77,8 +79,10 @@ Coffee.create!(
   brand_id: sey.id,
   producer_id: lance_shnorenberg.id
 )
+file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202252/tj183hemvf3ihts65woy.png")
+bukeye.image.attach(io: file, filename: "bukeye.png", content_type: "image/png")
 
-Coffee.create!(
+kii = Coffee.create!(
   name: "Kii",
   brew_method: "filter",
   brew_recipe: "WILL BE FILLED LATER",
@@ -90,5 +94,7 @@ Coffee.create!(
   brand_id: coffee_collective.id,
   producer_id: peter_dupont.id
 )
+file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
+kii.image.attach(io: file, filename: "kii.png", content_type: "image/png")
 
 puts "Done!"
