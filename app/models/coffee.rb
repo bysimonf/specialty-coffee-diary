@@ -1,6 +1,6 @@
 class Coffee < ApplicationRecord
-  brew_methods = ["espresso", "filter", "omni"]
-  processing_methods = ["natural", "washed", "honey"]
+  BREW_METHODS = ["omni", "espresso", "filter"]
+  PROCESSING = ["natural", "washed", "honey"]
 
   belongs_to :user
   belongs_to :brand
@@ -9,9 +9,11 @@ class Coffee < ApplicationRecord
   has_many :bookmarks
   has_many :reviews
 
-  validates :name, uniqueness: true
+  validates :name, uniqueness: true, presence: true
   validates :brand, :brew_method, :origin, :flavor, :processing, presence: true
-  validates :brew_method, inclusion: { in: brew_methods }
-  validates :processing, inclusion: { in: processing_methods }
+  validates :brand, inclusion: { in: Brand.all }
+  validates :producer, inclusion: { in: Producer.all }
+  validates :brew_method, inclusion: { in: BREW_METHODS }
+  validates :processing, inclusion: { in: PROCESSING }
   validates :description, :brew_recipe, presence: true, length: { minimum: 10 }
 end
