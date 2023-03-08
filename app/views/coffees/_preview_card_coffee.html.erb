@@ -1,3 +1,8 @@
-<div class="card-preview" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path coffee.image.key if coffee.image.key %>')">
+<% if coffee.image.attached? %>
+  <% image_coffee = cl_image_path coffee.image.key %>
+<% else %>
+  <% image_coffee = "https://res.cloudinary.com/dak3altpj/image/upload/v1678206484/development/y7vy91bf6jgac7xgz070jr9h68ez.png"  %>
+<% end %>
+<div class="card-preview" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_coffee %>')">
   <%= link_to coffee.name, coffee_path(coffee) %>
 </div>
