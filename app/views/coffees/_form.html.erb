@@ -1,0 +1,12 @@
+<%= simple_form_for(coffee) do |f| %>
+  <%= f.input :name %>
+  <%= f.association :brand, collection: Brand.all.map(&:name).uniq, prompt: "Choose a Brand" %>
+  <%= f.association :producer, collection: Producer.all.map(&:name).uniq, prompt: "Choose a Producer" %>
+  <%= f.input :origin %>
+  <%= f.input :description %>
+  <%= f.input :processing, collection: Coffee::PROCESSING, prompt: "Choose a Brew Method" %>
+  <%= f.input :brew_method, collection: Coffee::BREW_METHODS, prompt: "Choose a Brew Method" %>
+  <%= f.input :brew_recipe %>
+  <%= f.input :flavor %>
+  <%= f.submit %>
+<% end %>
