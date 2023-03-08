@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create]
   end
   resources :bookmarks, only: [:index]
+  resources :producers, only: [:index]
   # Defines the root path route ("/")
   # root "articles#index"
 end
