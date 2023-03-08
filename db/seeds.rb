@@ -1,5 +1,7 @@
 Coffee.destroy_all
 User.destroy_all
+Brand.destroy_all
+Producer.destroy_all
 
 puts "Creating users..."
 user_bethy = User.create!(email: "bethy@gmail.com", password: "secret", username: "Bethy")
@@ -50,8 +52,7 @@ peter_dupont = Producer.create!(
 
 puts "Creating coffees..."
 
-
-lacabra = Coffee.create!(
+lacabra = Coffee.new(
   name: "Mustafá",
   brew_method: "omni",
   brew_recipe: "Minimum resting period: Filter 7 days / Espresso 14 days",
@@ -62,12 +63,15 @@ lacabra = Coffee.create!(
   processing: "washed",
   user_id: user_simon.id,
   brand_id: la_cabra.id,
-  producer_id: ana_mustafá.id
+  producer_id: ana_mustafá.id,
+  image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png"
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
-lacabra.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
+# file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
 
-bukeye = Coffee.create!(
+# lacabra.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
+lacabra.save!
+
+bukeye = Coffee.new(
   name: "Bukeye",
   brew_method: "omni",
   brew_recipe: "WILL BE FILLED LATER",
@@ -77,12 +81,14 @@ bukeye = Coffee.create!(
   processing: "washed",
   user_id: user_bethy.id,
   brand_id: sey.id,
-  producer_id: lance_shnorenberg.id
+  producer_id: lance_shnorenberg.id,
+  image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678206487/development/6vkv5c1gj33ibbgsjreb1n83qijb.png"
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202252/tj183hemvf3ihts65woy.png")
-bukeye.image.attach(io: file, filename: "bukeye.png", content_type: "image/png")
+# file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202252/tj183hemvf3ihts65woy.png")
+# bukeye.image.attach(io: file, filename: "bukeye.png", content_type: "image/png")
+bukeye.save!
 
-kii = Coffee.create!(
+kii = Coffee.new(
   name: "Kii",
   brew_method: "filter",
   brew_recipe: "WILL BE FILLED LATER",
@@ -92,9 +98,11 @@ kii = Coffee.create!(
   processing: "washed",
   user_id: user_milo.id,
   brand_id: coffee_collective.id,
-  producer_id: peter_dupont.id
+  producer_id: peter_dupont.id,
+  image: "https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png"
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
-kii.image.attach(io: file, filename: "kii.png", content_type: "image/png")
+# file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
+# kii.image.attach(io: file, filename: "kii.png", content_type: "image/png")
+kii.save!
 
 puts "Done!"

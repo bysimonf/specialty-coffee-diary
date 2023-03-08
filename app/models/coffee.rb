@@ -14,5 +14,5 @@ class Coffee < ApplicationRecord
   validates :brew_method, inclusion: { in: brew_methods }
   validates :processing, inclusion: { in: processing_methods }
   validates :description, :brew_recipe, presence: true, length: { minimum: 10 }
-  has_one_attached :image
+  # has_one_attached :image
 end
