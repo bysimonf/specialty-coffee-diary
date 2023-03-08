@@ -1,4 +1,5 @@
 Coffee.destroy_all
+# Chatroom.destroy_all
 User.destroy_all
 Brand.destroy_all
 Producer.destroy_all
@@ -30,7 +31,7 @@ coffee_collective = Brand.create!(
   their own coffee shops, subscribers and web shop customers"
 )
 
-tomoca= Brand.create!(
+tomoca = Brand.create!(
   name: "Tomoca",
   description: "Tomoca coffee is established in 1953, in Addis Ababa – Ethiopia.
   The acronym TO.MO.CA is derived from the Italian Torrefazione Moderna café, which means modern coffee roasting. "
@@ -141,5 +142,19 @@ tomoca.image.attach(io: file, filename: "tomoca.png", content_type: "image/png")
 tomoca.save!
 
 puts "Tomoca created"
+
+# puts "Creating chatrooms..."
+
+# general = Chatroom.new(
+#   name: "General",
+#   user_id: user_milo.id
+# )
+# general.save!
+
+# private_chat = Chatroom.new(
+#   name: "Private",
+#   user_id: user_bethy.id
+# )
+# private_chat.save!
 
 puts "Done!"
