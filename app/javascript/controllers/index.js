@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import BookmarkCoffeeController from "./bookmark_coffee_controller"
+application.register("bookmark-coffee", BookmarkCoffeeController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
