@@ -1,8 +1,9 @@
 Coffee.destroy_all
-# Chatroom.destroy_all
 User.destroy_all
 Brand.destroy_all
 Producer.destroy_all
+
+Chatroom.destroy_all
 
 puts "Creating users..."
 user_bethy = User.create!(email: "bethy@gmail.com", password: "secret", username: "Bethy")
@@ -143,18 +144,16 @@ tomoca.save!
 
 puts "Tomoca created"
 
-# puts "Creating chatrooms..."
+puts "Creating chatrooms..."
 
-# general = Chatroom.new(
-#   name: "General",
-#   user_id: user_milo.id
-# )
-# general.save!
+general = Chatroom.new(
+  name: "Public Chat"
+)
+general.save!
 
-# private_chat = Chatroom.new(
-#   name: "Private",
-#   user_id: user_bethy.id
-# )
-# private_chat.save!
+private_chat = Chatroom.new(
+  name: "Private Chat"
+)
+private_chat.save!
 
 puts "Done!"
