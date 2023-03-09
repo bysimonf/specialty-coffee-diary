@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1510153704066-32b97a2d3c34?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHBsYW50YXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60);">
+    <div class="container">
+      <h1>speciality Coffee</h1>
+      <h3>fall in love with  specialityCoffee <i class="fas fa-heart"></i> </h3>
+      <div class="search">
+                    <%= form_with url: coffees_path, method: :get, class: "d-flex search-bar" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find a coffee"
+            %>
+          <% end %>
+            <%= submit_tag "Search", class: "btn-secondary" %>
+      </div>
+    </div>
+  </div>
+  <section class="section-how-to mt-3">
+    <h2 class="gallery-headline">How it works:</h2>
+    <div class="image-gallery">
+      <div class="img-flex-item">
+        <div class="img-salmon-border"><i class="fa-solid fa-user"></i></div>
+        <div class="img-caption">1. Type in your Coffee</h2> </div>
+      </div>
+      <div class="img-flex-item">
+        <div class="img-salmon-border"><i class="fa-sharp fa-solid fa-binoculars"></i></div>
+        <div class="img-caption">2.select the coffee you want</div>
+      </div>
+      <div class="img-flex-item">
+        <div class="img-salmon-border"><i class="fa-solid fa-bookmark"></i></div>
+        <div class="img-caption">3.  explore the details andBookmark i</div>
+      </div>
+      <div class="img-flex-item">
+        <div class="img-salmon-border"><i class="fa-solid fa-face-smile"></i></div>
+        <div class="img-caption">4. review it </div>
+      </div>
+    </div>
+  </section>
+</div>
