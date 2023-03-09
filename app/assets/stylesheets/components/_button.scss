@@ -49,5 +49,7 @@
   color: $background-white;
 }
 
-// back button by font awesome
-// <i class="fa-sharp fa-regular fa-circle-arrow-left"></i>
+.back-btn {
+  font-size: 24px;
+  color: $lines-and-back-btns;
+}

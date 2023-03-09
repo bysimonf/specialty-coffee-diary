@@ -1,12 +1,53 @@
-<% if user_signed_in? %>
-  <%= link_to "Save coffee", coffee_bookmarks_path(@coffee), method: :post, data: {turbo_method: :post}, class: "btn-primary-cta" %>
-<% end %>
 <% if coffee.image.attached? %>
   <% image_coffee = cl_image_path coffee.image.key %>
 <% else %>
   <% image_coffee = "https://res.cloudinary.com/dak3altpj/image/upload/v1678206484/development/y7vy91bf6jgac7xgz070jr9h68ez.png"  %>
 <% end %>
-<div class="card-preview"
-  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( '<%= image_coffee %>')">
-  <h1><%= coffee.name %></h1>
+
+<div class="detail-card">
+
+  <div class="square">
+    <img src="<%= image_coffee %>" alt="coffee-image" class="img-square">
+  </div>
+
+  <div class="detail-card-description">
+    <h1><%= coffee.name %></h1>
+
+    <h5>Description</h5>
+    <p><%= coffee.description %></p>
+
+    <div class="d-flex justify-content-between align-items-start">
+      <h3>Origin</h3>
+      <p><%= coffee.origin %></p>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-start">
+      <h3>Producer</h3>
+      <p><%= coffee.producer.name %></p>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-start">
+      <h3>Brew Method</h3>
+      <p><%= coffee.brew_method %></p>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-start">
+      <h3>Processing</h3>
+      <p><%= coffee.processing %></p>
+    </div>
+
+    <h3>Flavor</h3>
+    <p><%= coffee.flavor %></p>
+
+
+    <h3>Brew Recipe</h3>
+    <p><%= coffee.brew_recipe %></p>
+
+
+    <% if user_signed_in? %>
+      <%= link_to "Save coffee", coffee_bookmarks_path(@coffee), method: :post, data: {turbo_method: :post}, class: "btn-primary-cta" %>
+    <% end %>
+  </div>
+
+
 </div>

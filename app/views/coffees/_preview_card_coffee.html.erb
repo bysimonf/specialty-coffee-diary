@@ -3,6 +3,18 @@
 <% else %>
   <% image_coffee = "https://res.cloudinary.com/dak3altpj/image/upload/v1678206484/development/y7vy91bf6jgac7xgz070jr9h68ez.png"  %>
 <% end %>
-<div class="card-preview" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_coffee %>')">
-  <%= link_to coffee.name, coffee_path(coffee) %>
+
+<div class="preview-card">
+
+  <div class="square">
+    <img src="<%= image_coffee %>" alt="coffee-image" class="img-square">
+  </div>
+
+  <div class="preview-card-description">
+    <h2><%= coffee.name %></h2>
+    <p><%= coffee.brand.name %></p>
+
+    <%= link_to "Learn more", coffee_path(coffee), class: "btn-primary-cta" %>
+  </div>
+
 </div>
