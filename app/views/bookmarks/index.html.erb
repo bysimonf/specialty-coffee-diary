@@ -1,3 +1,6 @@
+<%# <%= link_to fa_icon("sharp regular circle-arrow-left"), coffees_path %>
+<a href=“#”><i class="fa-sharp fa-regular fa-circle-arrow-left"></i></a>
+
 <h1>My bookmarked coffees:</h1>
 
 <div class="cards">
@@ -6,5 +9,3 @@
     <%= render "coffees/preview_card_coffee", coffee: coffee %>
   <% end %>
 </div>
-
-<%= link_to "Back to all coffees", coffees_path, class: "btn" %>
