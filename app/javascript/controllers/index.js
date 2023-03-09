@@ -7,6 +7,9 @@ import { application } from "./application"
 import BookmarkCoffeeController from "./bookmark_coffee_controller"
 application.register("bookmark-coffee", BookmarkCoffeeController)
 
+import ChatroomSubscriptionController from "./chatroom_subscription_controller"
+application.register("chatroom-subscription", ChatroomSubscriptionController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
