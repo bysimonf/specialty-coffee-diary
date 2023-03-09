@@ -5,4 +5,24 @@
 
 .search-bar input[type="text"] {
   border-radius: 0;
+  width: 100%;
+  position: center;
+  background-color:$background-white;
+  font-size: 35px;
+  color: black;
+
+}
+.search  .btn-secondary{
+width: 100%;
+background-color: #0f9783;
+
+}
+.search .search-bar input {
+background-color: transparent;
+
+}
+
+.search .search-bar input:hover {
+  background-color: $background-white; ;
+
 }
