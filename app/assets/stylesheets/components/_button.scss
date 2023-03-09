@@ -1,19 +1,53 @@
-.cta-button {
+.btn-primary-cta {
   font-family: 'Outfit';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 20.16px;
   background-color: $call-to-action;
   border-radius: 0;
+  width: 182px;
+  height: 51.25px;
+  padding: 6px 20px;
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #FFFFFF;
+  text-decoration: none;
+  color: $background-white;
 }
 
-.cta-button:hover {
+.btn-primary-cta:hover {
+  color: $background-white;
   background-color: $hover;
 }
+
+.btn-secondary {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20.16px;
+  border-radius: 0;
+  width: 182px;
+  height: 51.25px;
+  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $call-to-action;
+  background-color: transparent;
+  border: 1px solid $call-to-action;
+}
+
+.btn-secondary:hover {
+  background-color: $hover;
+  color: $background-white;
+}
+
+// back button by font awesome
+// <i class="fa-sharp fa-regular fa-circle-arrow-left"></i>

@@ -1,8 +1,8 @@
-<%= form_with url: coffees_path, method: :get, class: "d-flex" do %>
+<%= form_with url: coffees_path, method: :get, class: "d-flex search-bar" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a coffee"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn-secondary" %>
 <% end %>
