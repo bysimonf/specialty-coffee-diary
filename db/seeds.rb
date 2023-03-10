@@ -63,8 +63,9 @@ peter_dupont = Producer.create!(
 
 wondwossen_meshesha = Producer.create!(
   name: "wondwossen_meshesha",
-  description: "The Coffee Collective is to this day 100% owned and run by Peter N. Dupont,
-  Casper Engel Rasmussen and Klaus Thomsen.",
+  description: "Tomoca is a member of the Ethiopia Commodity Exchange,
+  and it exports its coffee to Sweden, Germany,
+  the United States, Japan, and other countries.",
   address: "Ethiopia"
 )
 
@@ -90,6 +91,24 @@ lacabra.save!
 
 puts "lacabra created"
 
+kii = Coffee.new(
+  name: "Kii",
+  brew_method: "filter",
+  brew_recipe: "WILL BE FILLED LATER",
+  origin: "Kenya",
+  description: "Carefully processed to bring out its full flavour and aroma, delivering a truly enjoyable cup of coffee.",
+  flavor: "Rich and sweet with a fruity acidity",
+  processing: "washed",
+  user_id: user_milo.id,
+  brand_id: coffee_collective.id,
+  producer_id: peter_dupont.id
+)
+file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
+kii.image.attach(io: file, filename: "kii.png", content_type: "image/png")
+kii.save!
+
+puts "kii created"
+
 bukeye = Coffee.new(
   name: "Bukeye",
   brew_method: "omni",
@@ -108,23 +127,6 @@ bukeye.save!
 
 puts "bukeye created"
 
-kii = Coffee.new(
-  name: "Kii",
-  brew_method: "filter",
-  brew_recipe: "WILL BE FILLED LATER",
-  origin: "Kenya",
-  description: "Carefully processed to bring out its full flavour and aroma, delivering a truly enjoyable cup of coffee.",
-  flavor: "Rich and sweet with a fruity acidity",
-  processing: "washed",
-  user_id: user_milo.id,
-  brand_id: coffee_collective.id,
-  producer_id: peter_dupont.id
-)
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
-kii.image.attach(io: file, filename: "kii.png", content_type: "image/png")
-kii.save!
-
-puts "kii created"
 
 tomoca = Coffee.new(
   name: "Tomoca",
@@ -147,12 +149,12 @@ puts "Tomoca created"
 puts "Creating chatrooms..."
 
 general = Chatroom.new(
-  name: "Public Chat"
+  name: "Discussion Room"
 )
 general.save!
 
 private_chat = Chatroom.new(
-  name: "Private Chat"
+  name: "Event Room"
 )
 private_chat.save!
 
