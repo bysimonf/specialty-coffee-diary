@@ -1,16 +1,13 @@
 .banner {
-  background-size: 844px;
-  background-position: center;
-  padding: 150px 0;
-  background-position: center;
+  padding-top: 60px;
+  background-position-x: center;
+  background-position-y: top;
   background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
-  margin: bottom 0;
+  height: 100vh;
+}
 
-  height: auto;
-}
-.responsive {
-  width: 100%;
-  height: auto;
-}
+// .responsive {
+//   width: 100%;
+//   height: auto;
+// }
