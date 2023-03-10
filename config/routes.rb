@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :bookmarks, only: [:index]
   resources :producers, only: [:index]
-  resources :chatrooms, only: [:show] do
+  resources :chatrooms, only: [:index, :show] do
     resources :messages, only: [:create]
   end
   # Defines the root path route ("/")
