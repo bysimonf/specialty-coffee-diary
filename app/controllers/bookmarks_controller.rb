@@ -7,6 +7,7 @@ class BookmarksController < ApplicationController
     @coffee = Coffee.find(params[:coffee_id])
     @bookmark = Bookmark.new(user: current_user, coffee: @coffee)
     @coffee.is_bookmarked = true
+    @coffee.save
 
     if @bookmark.save
       redirect_to coffee_path(@coffee), notice: "You saved this coffee"
