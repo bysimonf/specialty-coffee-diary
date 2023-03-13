@@ -53,3 +53,8 @@
   font-size: 24px;
   color: $lines-and-back-btns;
 }
+
+// overwrite default styles
+#new_coffee input[type="submit"] {
+  border: none;
+}
