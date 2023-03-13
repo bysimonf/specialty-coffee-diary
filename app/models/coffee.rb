@@ -27,4 +27,5 @@ class Coffee < ApplicationRecord
   validates :processing, inclusion: { in: PROCESSING }
   validates :description, :brew_recipe, presence: true, length: { minimum: 10 }
   has_one_attached :image
+
 end
