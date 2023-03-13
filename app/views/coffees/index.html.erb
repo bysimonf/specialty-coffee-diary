@@ -10,7 +10,7 @@
 <%= render "coffees/search_form" %>
 
 
-<div class="cards">
+<div class="cards mt-3">
   <% @coffees.each do |coffee| %>
     <%= render "coffees/preview_card_coffee", coffee: coffee %>
   <% end %>
