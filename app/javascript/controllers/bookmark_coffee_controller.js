@@ -2,13 +2,15 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="bookmark-coffee"
 export default class extends Controller {
+  static targets = ["bookmark"]
+  // static values = { id: Number }
+
   connect() {
   }
 
-  bookmarkCoffee(event) {
-    console.log(event)
-    // call bookmark method create
-    // set bookmark status to true in the coffee model
-    // change icon on a coffee (ternary operator)
+  bookmarkCoffee() {
+    const bookmark = this.bookmarkTarget
+    bookmark.classList.toggle('fa-regular')
+    bookmark.classList.toggle('fa-solid')
   }
 }

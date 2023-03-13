@@ -7,4 +7,8 @@ class User < ApplicationRecord
   has_many :bookmarks
   has_many :reviews
   has_many :messages, dependent: :destroy
+
+  def bookmarked?(coffee)
+    Bookmark.where(user: self, coffee: coffee).any?
+  end
 end
