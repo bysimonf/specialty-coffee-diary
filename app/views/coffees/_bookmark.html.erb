@@ -1,0 +1,19 @@
+  <% if current_user && current_user.bookmarked?(coffee) %>
+    <% bookmark = Bookmark.find_by(user: current_user, coffee: coffee) %>
+    <%= link_to bookmark_path(bookmark), data: {turbo_method: :delete} do %>
+      <i class="fa-solid fa-bookmark bookmark-icon"
+        data-controller="bookmark-coffee"
+        data-bookmark-coffee-target="bookmark"
+        data-action="click->bookmark-coffee#bookmarkCoffee">
+      </i>
+  <% end %>
+
+  <% else %>
+    <%= link_to coffee_bookmarks_path(coffee), data: {turbo_method: :post} do %>
+      <i class="fa-regular fa-bookmark bookmark-icon"
+        data-controller="bookmark-coffee"
+        data-bookmark-coffee-target="bookmark"
+        data-action="click->bookmark-coffee#bookmarkCoffee">
+      </i>
+    <% end %>
+  <% end %>

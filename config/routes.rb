@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :coffees, only: [:index, :show, :create, :new] do
     resources :bookmarks, only: [:create]
   end
-  resources :bookmarks, only: [:index]
+  resources :bookmarks, only: [:index, :destroy]
   resources :producers, only: [:index]
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: [:create]

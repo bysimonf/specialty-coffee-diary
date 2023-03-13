@@ -44,10 +44,12 @@
     <p><%= coffee.brew_recipe %></p>
 
 
-    <% if user_signed_in? %>
-      <%= link_to "Save coffee", coffee_bookmarks_path(@coffee), method: :post, data: {turbo_method: :post}, class: "btn-primary-cta" %>
+    <% if current_user && current_user.bookmarked?(coffee) %>
+      <% bookmark = Bookmark.find_by(user: current_user, coffee: coffee) %>
+      <%= link_to "Unbookmark", bookmark_path(bookmark), data: {turbo_method: :delete}, class: "btn-primary-cta" %>
+    <% else %>
+      <%= link_to "Save coffee", coffee_bookmarks_path(@coffee), data: {turbo_method: :post}, class: "btn-primary-cta" %>
     <% end %>
+
   </div>
-
-
 </div>
