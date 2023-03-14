@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Define you application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :coffees, only: [:index, :show, :create, :new] do
     resources :bookmarks, only: [:create]
+    resources :producers, only: [:show]
     resources :reviews, only: [:index, :new, :create]
   end
 
