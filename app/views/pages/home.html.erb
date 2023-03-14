@@ -5,5 +5,8 @@
     <p>We are driven by the joy of highest quality coffees, no matter if pouring a perfectly sweet espresso shot or a super fruity filter.</p>
     <p>While acurate brew recipes or origin's details are already a pretty nerdy topic, they are hard to remember most of the times without taking notes.</p>
   </div>
+
+  <h2>Coffee of the day:</h2>
+  <%= render "coffees/random_coffee", coffees: @coffees %>
   <%= render "pages/how_it_works" %>
 </div>

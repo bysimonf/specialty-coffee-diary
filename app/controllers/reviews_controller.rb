@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     # @review.rating = Review.average(:rating)
 
     if @review.save
-      redirect_to coffee_path(@coffee), notice: "You reviewd this coffee"
+      redirect_to coffee_path(@coffee), notice: "You reviewed this coffee"
     else
       # render :new, status: :unprocessable_entity
       redirect_to coffee_path(@coffee), alert: "#{@review.errors.messages[:coffee].first}"

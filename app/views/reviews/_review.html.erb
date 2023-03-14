@@ -7,7 +7,7 @@
         <h3><%= coffee.reviews.average(:rating).round(1) %>/5</h3>
 
         <% coffee.reviews.each do |review| %>
-          <div class= "review-content">
+          <div class="review-content">
             <div>
               <p><%= review.user.username%></p>
             </div>
