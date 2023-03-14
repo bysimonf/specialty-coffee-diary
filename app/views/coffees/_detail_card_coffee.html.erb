@@ -13,7 +13,7 @@
   <div class="detail-card-description-container">
     <h1 class="detail-heading"><%= coffee.name %></h1>
     <div class="location-map">
-        <%= link_to  coffee_producer_path(@coffee.producer.address) do %>
+        <%= link_to  coffee_producer_path(coffee.producer.address) do %>
           <div><i class="fa-solid fa-location-dot"></i></div>
         <% end %>
         <h6><%= coffee.origin %></h6>
@@ -55,7 +55,6 @@
 
       <h3>Flavor</h3>
       <p><%= coffee.flavor %></p>
-
 
       <h3>Brew Recipe</h3>
       <p><%= coffee.brew_recipe %></p>

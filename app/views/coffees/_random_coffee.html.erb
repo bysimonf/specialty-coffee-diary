@@ -1,0 +1,5 @@
+<div class="cards">
+  <% coffees.sample(1).each do |coffee| %>
+    <%= render "coffees/preview_card_coffee", coffee: coffee %>
+  <% end %>
+</div>

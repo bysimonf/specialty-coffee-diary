@@ -18,7 +18,7 @@ class ProducersController < ApplicationController
       lng: @producer.longitude,
       lat: @producer.latitude,
       info_window_html: render_to_string(partial: "info_window", locals: { coffee: @coffee, producer: @producer })
-      }]
+    }]
   end
 
   def coffee_params
