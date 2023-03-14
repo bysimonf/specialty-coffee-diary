@@ -436,7 +436,7 @@ santa_isabel = Coffee.new(
   flavor: "Apricot, Blood Orange, Caramel",
   processing: "washed",
   user_id: user_ale.id,
-  brand_id: Nomand_coffee.id,
+  brand_id: Nomad_coffee.id,
   producer_id: fgu_isab.id
 )
 file = URI.open("https://res.cloudinary.com/do52w4zcf/image/upload/v1678791715/F.GU_.ISAB__dpsmi0.jpg")
@@ -464,6 +464,7 @@ agua_iglesia.save!
 puts "Agua Iglesia created"
 
 La_Pira = Coffee.new(
+
   name: "La Pira",
   brew_method: "omni",
   brew_recipe: "Minimum resting period: omni 10 days / omni 12 days",
