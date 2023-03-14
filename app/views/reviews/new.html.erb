@@ -1,0 +1,9 @@
+<div class="review-form-container">
+  <div class="review-form">
+    <%= simple_form_for [@coffee, @review] do |f| %>
+      <%= f.input :rating, collection: Review::RATING, prompt: "Choose a Rating" %>
+      <%= f.input :comment %>
+      <%= f.submit  "Submit review", class: "btn-primary-cta" %>
+    <% end %>
+  </div>
+</div>
