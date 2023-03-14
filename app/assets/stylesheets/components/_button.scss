@@ -60,6 +60,10 @@
   color: $lines-and-back-btns;
 }
 
+.review-btn-padding {
+  margin-top: 12px;
+}
+
 // overwrite default styles
 #new_coffee input[type="submit"] {
   border: none;
