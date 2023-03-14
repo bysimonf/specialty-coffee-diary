@@ -1,0 +1,39 @@
+ <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" class=" btn-primary-cta reviewbtn">
+  Reviews
+  </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <% if coffee.reviews.any? %>
+        <h3>Reviews(<%= coffee.reviews.count%>)</h3>
+        <h3><%= coffee.reviews.average(:rating).round(1) %>/5</h3>
+        <% coffee.reviews.each do |review| %>
+          <div class= "review-content">
+            <div>
+              <%= review.user.username%>
+            </div>
+            <div>
+              <% review.rating.to_i.times do  %>
+                <i class="fa-solid fa-star"></i>
+              <% end %>
+            </div>
+            <div>
+              <%= review.comment %>
+            </div>
+            <% if review.user == current_user %>
+              <%= link_to review_path(review), data: {"turbo_method": :delete, turbo_confirm: "Are you sure?"} do %>
+                <div><i class="fa-solid fa-trash"></i></div>
+              <% end %>
+
+            <% end %>
+          </div>
+        <% end %>
+          <div class="review-buttons">
+          <%= link_to "Add review",  new_coffee_review_path(@coffee), class: "btn-primary-cta" %>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        <% else %>
+          <%= link_to "Add review",  new_coffee_review_path(@coffee), class: "btn-primary-cta" %>
+        <% end %>
+    </div>
+  </div>
+
+  </div>
