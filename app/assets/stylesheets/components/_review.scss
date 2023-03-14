@@ -1,10 +1,13 @@
-.review-content{
-  margin: 10px;
-  color: $text;
+.reviews-dropdown {
+  padding: 16px;
+}
+.reviews-dropdown.dropdown-menu {
+  border: none;
+  border-radius: 0;
 }
 
 .fa-star{
-  color: $call-to-action;
+  color: $lines-and-back-btns;
 }
 
 .fa-trash{
@@ -19,21 +22,13 @@
 .dropdown-menu h3{
   margin: 10px, 0;
 }
-.review-buttons{
-  display: flex;
-  margin-left: 26px;
 
-.btn-primary-cta{
-  flex-basis: 40%;
-  margin: 4px 4px 20px 4px;
-  padding: 4px;
-  }
-.btn-secondary{
-    flex-basis: 40%;
-    margin: 4px;
-    padding: 4px;
-    }
-}
 .review-content{
+  color: $text;
   background-color: $background-cream;
+  padding: 12px;
+}
+
+.review-content p {
+  margin: 0;
 }
