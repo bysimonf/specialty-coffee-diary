@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  get "/about", to: "application#about"
+
+  # Define you application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :coffees, only: [:index, :show, :create, :new] do
     resources :bookmarks, only: [:create]
+    resources :producers, only: [:show]
     resources :reviews, only: [:index, :new, :create]
   end
 

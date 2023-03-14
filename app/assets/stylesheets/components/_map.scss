@@ -8,3 +8,22 @@ path {
 .mapboxgl-popup-content p {
   margin: 0;
 }
+.mapboxgl-popup{
+  max-width: 356px !important;
+}
+.location-map{
+  display: flex;
+  h6{
+    padding-top: 8px;
+  }
+}
+.fa-location-dot{
+  margin-right: 10px;
+  color: $headers !important;
+  font-size: 10px;
+  padding-top: 0 !important;
+}
+
+.detail-heading{
+  margin-bottom: 0;
+}
