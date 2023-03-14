@@ -12,16 +12,15 @@
 
   <div class="detail-card-description-container">
     <h1><%= coffee.name %></h1>
-   <div>
-      <h1><%= coffee.name %></h1>
+    <div>
       <% if coffee.reviews.any? %>
         <%= coffee.reviews.average(:rating).round(1) %>
-        <% coffee.reviews.average(:rating).round(1).to_i.times do  %>
-            <i class="fa-solid fa-star"></i>
+        <% coffee.reviews.average(:rating).round(1).to_i.times do %>
+          <i class="fa-solid fa-star"></i>
         <% end %>
       <% end %>
     </div>
-    
+
     <div class="detail-card-description-overview">
       <h5 class="description-headline">Description</h5>
       <p><%= coffee.description %></p>
@@ -64,7 +63,7 @@
         <%= link_to "Save coffee", coffee_bookmarks_path(@coffee), data: {turbo_method: :post}, class: "btn-primary-cta btn-width-100" %>
       <% end %>
     </div>
-    
+
     <%= render "reviews/review", coffee: coffee %>
 
   </div>
