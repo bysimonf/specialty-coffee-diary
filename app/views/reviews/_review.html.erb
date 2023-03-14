@@ -1,7 +1,7 @@
 <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" class=" btn-secondary btn-width-100 review-btn-padding">
   Reviews
   </button>
-    <div class="dropdown-menu reviews-dropdown" aria-labelledby="dropdownMenuButton1">
+    <div class="dropdown-menu reviews-dropdown review-dropdown" aria-labelledby="dropdownMenuButton1">
       <% if coffee.reviews.any? %>
         <h3>Reviews (<%= coffee.reviews.count%>)</h3>
         <h3><%= coffee.reviews.average(:rating).round(1) %>/5</h3>
