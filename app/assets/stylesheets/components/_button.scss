@@ -51,7 +51,16 @@
   color: $background-white;
 }
 
+.btn-width-100 {
+  width: 100%;
+}
+
 .back-btn {
   font-size: 24px;
   color: $lines-and-back-btns;
+}
+
+// overwrite default styles
+#new_coffee input[type="submit"] {
+  border: none;
 }

@@ -1,4 +1,33 @@
-.detail-card-description {
+.detail-card-description-container {
   background-color: $background-cream;
   padding: 16px;
+
+  animation: mymove 5s infinite;
+
+  @keyframes mymove {
+    from {background-color: red;}
+    to {background-color: blue;}
+  }
+}
+
+.detail-card-description-overview,
+.detail-card-description-details,
+.detail-card-description-cta {
+  margin-top: 48px;
+}
+
+.description-headline {
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.description-headline::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 0px;
+  left: 0px;
+  top: 21px;
+  border-bottom: 2px solid $lines-and-back-btns;
 }

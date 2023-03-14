@@ -6,11 +6,14 @@ class BookmarksController < ApplicationController
   def create
     @coffee = Coffee.find(params[:coffee_id])
     @bookmark = Bookmark.new(user: current_user, coffee: @coffee)
+    @coffee.save
+    @bookmark.save
+    flash.notice = "You saved this coffee"
+  end
 
-    if @bookmark.save
-      redirect_to coffee_path(@coffee), notice: "You saved this coffee"
-    else
-      redirect_to coffee_path(@coffee), alert: "#{@bookmark.errors.messages[:coffee].first}"
-    end
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    flash.alert = "You removed the bookmark"
   end
 end
