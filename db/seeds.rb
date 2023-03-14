@@ -19,6 +19,16 @@ la_cabra = Brand.create!(
   you to some truly memorable coffee experiences"
 )
 
+bonanza = Brand.create!(
+  name: "Bonanza Coffee Roasters",
+  description: "Bonanza coffee doesn’t have to taste that way. But it does.
+  It’s not your typical. It's unnecessarily good.
+  Maybe that's because we're unnecessarily driven.
+  Unnecessarily curious. Unnecessarily obsessed.
+  You could say we take things too far. And you’d actually be right.
+  We go places that others wouldn’t. For us, “too far” is exactly where we want to be. All in the name of coffee."
+)
+
 Drop_coffee = Brand.create!(
   name: "Drop coffee",
   description: " Drop Coffee was founded in Stockholm, Sweden in 2009 as a coffee bar by Mariatorget,
@@ -102,11 +112,24 @@ lance_shnorenberg = Producer.create!(
   address: "Burundi"
 )
 
+fgu_isab = Producer.create!(
+  name: "Hernàndez family",
+  description: "Santa Isabel is the second farm from the Hernández family and has belonged to them for 25 years.
+  It's located in Antigua, a Guatemalan region known for its volcanic soil, rich in minerals. The farm is managed by Karen and her brother José. Their father, Adolfo, founded Café Kapeu, a company that supports producers in processing and selling their coffees. Karen is a Q grader and head of quality control in the company. It is her job to tell them if there are any practices that can be improved based on the quality of their cup.",
+  address: "Guatemala"
+)
+
 peter_dupont = Producer.create!(
   name: "Peter N. Dupont, Casper Engel Rasmussen and Klaus Thomsen.",
   description: "The Coffee Collective is to this day 100% owned and run by Peter N. Dupont,
   Casper Engel Rasmussen and Klaus Thomsen.",
   address: "Kenya"
+)
+
+linarco_rodriguez = Producer.create!(
+  name: "Linarco Rodriguez",
+  description: "Linarco Rodriguez grows coffee near the town of Palestina in southern Huila, one of the most renowned growing regions in Colombia.",
+  address: "Colombia"
 )
 
 wondwossen_meshesha = Producer.create!(
@@ -115,6 +138,24 @@ wondwossen_meshesha = Producer.create!(
   and it exports its coffee to Sweden, Germany,
   the United States, Japan, and other countries.",
   address: "Ethiopia"
+)
+
+alvarado_family = Producer.create!(
+  name: "The Alvarado Family",
+  description: "Joiner Alvarado and his family grow coffee in the foothills of Chirripo, the tallest peak in Costa Rica. ",
+  address: "Costa Rica"
+)
+
+a_iglesia = Producer.create!(
+  name: "Agua Iglesia Farmers",
+  description: "Agua Iglesia is a small village nestled high in the slopes of the Sierra Mazateca, in the rural north of Oaxaca",
+  address: "Mexico"
+)
+
+gaspar_diaz_domingo = Producer.create!(
+  name: "Gaspar Diaz Domingo",
+  description: "Gaspar Diaz Domingo is a member of a local cooperative in Huehuetenango named El Sendero.",
+  address: "Huehuetenango"
 )
 
 puts "Creating coffees..."
@@ -138,7 +179,6 @@ lacabra.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png
 lacabra.save!
 
 puts "lacabra created"
-
 
 Los_Andes = Coffee.new(
   name: "Los Andes",
@@ -293,6 +333,23 @@ bukeye.save!
 
 puts "bukeye created"
 
+l_rodriguez = Coffee.new(
+  name: "Linarco Rodriguez",
+  brew_method: "omni",
+  brew_recipe: "250g (8.8oz) or 1000g (35.3oz)",
+  origin: "Palestina",
+  description: "A crisp and clean representation of the Pink Bourbon varietal, with floral aromas, fresh acidity and a deep tropical sweetness.",
+  flavor: "A floral & balanced coffee",
+  processing: "washed",
+  user_id: user_ale.id,
+  brand_id: la_cabra.id,
+  producer_id: linarco_rodriguez.id
+)
+file = URI.open("https://res.cloudinary.com/do52w4zcf/image/upload/v1678793937/LinarcoRodriguez_FrontBox_covlky.png")
+l_rodriguez.image.attach(io: file, filename: "linarco.png", content_type: "image/png")
+l_rodriguez.save!
+
+puts "Linarco Rodiguez created"
 
 tomoca = Coffee.new(
   name: "Tomoca",
@@ -311,6 +368,42 @@ tomoca.image.attach(io: file, filename: "tomoca.png", content_type: "image/png")
 tomoca.save!
 
 puts "Tomoca created"
+
+santa_isabel = Coffee.new(
+  name: "Santa Isabel",
+  brew_method: "espresso",
+  brew_recipe: "We use 15 gr of medium ground coffee and 260 gr of water at a temperature of 96ºC. We pour the water in 2 times. One of 50 gr, we wait 30 seconds and then pour the rest of the water until it reaches 260 grams. The total infusion time should be between 2 and a half and 3 minutes.",
+  origin: "Guatamala",
+  description: "Smooth and delicate, to be enjoyed at any time of the day",
+  flavor: "Apricot, Blood Orange, Caramel",
+  processing: "washed",
+  user_id: user_ale.id,
+  brand_id: Nomand_coffee.id,
+  producer_id: fgu_isab.id
+)
+file = URI.open("https://res.cloudinary.com/do52w4zcf/image/upload/v1678791715/F.GU_.ISAB__dpsmi0.jpg")
+santa_isabel.image.attach(io: file, filename: "santa_isabel.png", content_type: "image/png")
+santa_isabel.save!
+
+puts "Santa Isabel created"
+
+agua_iglesia = Coffee.new(
+  name: "Agua Iglesia",
+  brew_method: "omni",
+  brew_recipe: "250g (8.8oz) or 1000g (35.3oz)",
+  origin: "Mexico",
+  description: "A rich, creamy and soft fruit-driven lot, produced by a group of farmers in Oaxaca's Sierra Mazateca mountain range.",
+  flavor: "A sweet & balanced coffee",
+  processing: "washed",
+  user_id: user_ale.id,
+  brand_id: la_cabra.id,
+  producer_id: a_iglesia.id
+)
+file = URI.open("https://res.cloudinary.com/do52w4zcf/image/upload/v1678800442/AguaIglesia_FrontBoxforRetail_mvimuy.png")
+agua_iglesia.image.attach(io: file, filename: "agua_iglesia.png", content_type: "image/png")
+agua_iglesia.save!
+
+puts "Agua Iglesia created"
 
 La_Pira = Coffee.new(
   name: "La Pira",
@@ -331,6 +424,44 @@ La_Pira.image.attach(io: file, filename: "La Pira.png", content_type: "image/png
 La_Pira.save!
 
 puts "La Pira created"
+
+corazon_de_jesus = Coffee.new(
+  name: "Corazón de Jesús",
+  brew_method: "omni",
+  brew_recipe: "Minimum resting period: omni 10 days / omni 12 days",
+  origin: "Costa Rica",
+  description: "The growing region of Brunca, located in the southernmost part of Costa Rica, was previously known for its mediocre coffees, but recently, thanks to some incredibly motivated producers, some of the coffees out of this region are blowing us away.",
+  flavor: "Honey, Lime, Black Tea, Caramel",
+  processing: "natural",
+  user_id: user_simon.id,
+  brand_id: bonanza.id,
+  producer_id: alvarado_family.id
+)
+file = URI.open("https://res.cloudinary.com/do52w4zcf/image/upload/v1678803296/CorazondeJesusNatural250g_800x_jvn3w7.png")
+
+corazon_de_jesus.image.attach(io: file, filename: "alvarado.png", content_type: "image/png")
+corazon_de_jesus.save!
+
+puts "Corazon de jesus created"
+
+gaspar_diaz = Coffee.new(
+  name: "Gaspar Diaz",
+  brew_method: "omni",
+  brew_recipe: "WILL BE FILLED LATER",
+  origin: "Guatemala",
+  description: "Much like other Guatemalan washed coffees, the coffee is depulped and left to ferment in water containers for 36 hours.
+  This allows for the mucilage to breakdown, but also introduces more complexity and underlying fruit character in the final cup.",
+  flavor: "Raspberry, Lemon Cheesecake & Jasmine",
+  processing: "washed",
+  user_id: user_ale.id,
+  brand_id: bonanza.id,
+  producer_id: gaspar_diaz_domingo.id
+)
+file = URI.open("https://res.cloudinary.com/do52w4zcf/image/upload/v1678805258/GasparDiaz250gbag_800x_xp3b1o.png")
+gaspar_diaz.image.attach(io: file, filename: "gaspar.png", content_type: "image/png")
+gaspar_diaz.save!
+
+puts "Gaspar Diaz created"
 
 puts "Creating chatrooms..."
 
