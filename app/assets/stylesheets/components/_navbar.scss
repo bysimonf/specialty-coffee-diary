@@ -24,6 +24,12 @@
 
 }
 
+.nav-logout{
+  background-color: $background-white;
+  border: 1px solid $call-to-action;
+  color: $call-to-action;
+}
+
 a.navbar-brand > img {
   width: 200px;
 }
