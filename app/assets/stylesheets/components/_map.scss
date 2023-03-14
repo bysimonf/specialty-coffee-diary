@@ -22,6 +22,22 @@ path {
   padding-top: 0 !important;
 }
 
+.mapboxgl-popup{
+  max-width: 340px !important;
+}
+.location-map{
+  display: flex;
+  h6{
+    padding-top: 8px;
+  }
+}
+.fa-location-dot{
+  margin-right: 10px;
+  color: $headers !important;
+  font-size: 10px;
+  padding-top: 0 !important;
+}
+
 .detail-heading{
   margin-bottom: 0;
 }
