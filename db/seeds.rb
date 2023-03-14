@@ -25,8 +25,8 @@ Drop_coffee = Brand.create!(
   We at Drop Coffee are dedicated to really tasty and sustainably produced coffee, we visit all producers we buy coffee from We are roasting the coffee carefully with complete focus,
   on the sweetness and vibrancy of each unique coffee"
 )
-Nomand_coffee = Brand.create!(
-  name: "Nomand coffee",
+Nomad_coffee = Brand.create!(
+  name: "Nomad coffee",
   description: "Jordi Mestre, the founded the brand  in 2011n after working as barista and winning at world championships   with all that passion
   and knowledge he started  his own brand"
 )
@@ -50,12 +50,31 @@ tomoca = Brand.create!(
 )
 
 puts "Creating producers..."
-ana_mustafá = Producer.create!(
-  name: "Ana Mustafá",
+Ana_Mustafa = Producer.create!(
+  name: "Ana Mustafa",
   description: "The farm lands were split up amongst the younger members of the family
   upon his their grandfather's death, leaving Ana the five farms across Risaralda she now
   oversees along with her cousin; two near La Celia and three near Pereira.",
   address: "Colombia"
+)
+Ben_Carlson = Producer.create!(
+  name: "Ben Carlson",
+  description: "The Long Miles Coffee Project is the dream-become-reality of Ben and Kristy Carlson. The pair moved to Burundi in 2011 with a simple dream: Help coffee growers by helping
+  roasters source consistently high quality coffees from Burundi",
+  address: "Burundi"
+)
+Granja_Paraíso = Producer.create!(
+  name: "Granja Paraíso",
+  description: "family-owned farm, managed by Wilton Benítez. Wilton is a chemical engineer passionate about technology,
+  biotechnology and development of new systems that guarantee the quality of coffee",
+  address: "Colombia"
+)
+
+Mierisch_Family = Producer.create!(
+  name: "Mierisch Family",
+  description: "The Mierisch family are one of the most talented,
+  in taste profiling which requires high-end skills on both growing and processing",
+  address: "Rio Bonito ,Honduras"
 )
 Mauricio_Ortiz = Producer.create!(
   name: "Mauricio Ortiz ",
@@ -96,21 +115,21 @@ Carlos_Ureña = Producer.create!(
   address: "Costa Rica "
 )
 lance_shnorenberg = Producer.create!(
-  name: "Tobin Polk and Lance Shnorenberg",
+  name: "Lance Shnorenberg",
   description: "They are owners and founders of SEY Coffee, are self-taught roasters who got their start with a Probat
   roaster in a fourth-floor Bushwick loft six years ago.",
   address: "Burundi"
 )
 
 peter_dupont = Producer.create!(
-  name: "Peter N. Dupont, Casper Engel Rasmussen and Klaus Thomsen.",
+  name: "Peter Dupont",
   description: "The Coffee Collective is to this day 100% owned and run by Peter N. Dupont,
   Casper Engel Rasmussen and Klaus Thomsen.",
   address: "Kenya"
 )
 
 wondwossen_meshesha = Producer.create!(
-  name: "wondwossen_meshesha",
+  name: "Wondwossen Mengesha",
   description: "Tomoca is a member of the Ethiopia Commodity Exchange,
   and it exports its coffee to Sweden, Germany,
   the United States, Japan, and other countries.",
@@ -119,8 +138,8 @@ wondwossen_meshesha = Producer.create!(
 
 puts "Creating coffees..."
 
-lacabra = Coffee.new(
-  name: "Mustafá",
+Mustafa = Coffee.new(
+  name: "Mustafa",
   brew_method: "filter",
   brew_recipe: "Minimum resting period: Filter 7 days / Espresso 14 days",
   origin: "Colombia",
@@ -130,14 +149,53 @@ lacabra = Coffee.new(
   processing: "washed",
   user_id: user_simon.id,
   brand_id: la_cabra.id,
-  producer_id: ana_mustafá.id
+  producer_id: Ana_Mustafa.id
 )
 file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
 
-lacabra.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
-lacabra.save!
+Mustafa.image.attach(io: file, filename: "Mustafa.jpg", content_type: "image/png")
+Mustafa.save!
 
-puts "lacabra created"
+puts "Mustafa"
+
+Heza = Coffee.new(
+  name: "Heza",
+  brew_method: "omni",
+  brew_recipe: "Minimum resting period: onmni 7 days / Espresso 14 days",
+  origin: "Colombia",
+  description: "natural-processed coffee from the Long Miles Project it has a more fruit-forward profile.",
+  flavor: " florality, plum, and lychee.",
+  processing: "washed",
+  user_id: user_ale.id,
+  brand_id: sey.id,
+  producer_id: Ben_Carlson.id
+)
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678804525/Mikuba_914x_ods6af.png")
+
+Heza.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
+Heza.save!
+
+puts "Heza"
+
+
+Cerro_Azul= Coffee.new(
+  name: "Cerro Azul",
+  brew_method: "omni",
+  brew_recipe: "Minimum resting period: omni 7 days / Espresso 14 days",
+  origin: "Honduras",
+  description: "  Adventurous natualy processed  with sweet and intense aroma",
+  flavor: "jasmine, cacao nibs and mature papaya",
+  processing: "washed",
+  user_id: user_milo.id,
+  brand_id: Drop_coffee.id,
+  producer_id: Mierisch_Family.id
+)
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678800626/avMn5YjqmOAcLsN76Zu0_552_k4httq.png")
+
+Cerro_Azul.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
+Cerro_Azul.save!
+
+puts "Cerro Azul"
 
 
 Los_Andes = Coffee.new(
@@ -145,7 +203,7 @@ Los_Andes = Coffee.new(
   brew_method: "filter",
   brew_recipe: "Minimum resting period: Filter 7 days / Espresso 14 days",
   origin: "El savador",
-  description: "ery unique taste profiles from Los Andes grew side by side at the farm,
+  description: "very unique taste profiles from Los Andes grew side by side at the farm,
   and the Bourbon in two different processing methods. .",
   flavor: "of lime juice and flavour notes of red apples and almond cake,
   with an aftertaste of lime zest",
@@ -154,7 +212,7 @@ Los_Andes = Coffee.new(
   brand_id: Drop_coffee.id,
   producer_id: Ernesto_Menéndez.id
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678794402/Pasen2_1080x_x4i5es.jpg")
 
 Los_Andes.image.attach(io: file, filename: "los andes.jpg", content_type: "image/png")
 Los_Andes.save!
@@ -173,7 +231,7 @@ El_Sunzita = Coffee.new(
   brand_id: Drop_coffee.id,
   producer_id: Mauricio_Ortiz.id
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678794092/Ladan_5bc973d6-8f6b-4f19-b70e-e9e05f479c1f_1512x_yilsvq.jpg")
 
 El_Sunzita.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
 El_Sunzita.save!
@@ -181,19 +239,19 @@ El_Sunzita.save!
 puts "El_Sunzita created"
 
 akmel_special = Coffee.new(
-  name: "akmel special",
+  name: "Akmel special",
   brew_method: "omni",
   brew_recipe: "Minimum resting period: french press 4 days / Espresso 14 days",
-  origin: "Colombia",
+  origin: "Ethiopia",
   description: "The coffee trees grow under shade of taller trees prolonging the ripening of the cherries,
   which contributes to the intense flavour we experience in this coffee.",
   flavor: "rich cocoa and deep stewed berries",
   processing: "washed",
-  user_id: user_milo.id,
+  user_id: user_bethy.id,
   brand_id: coffee_collective.id,
   producer_id: Akmel_Nuri.id
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678795687/sq_350_StVGeD8PsFqgHUyfNdKY_505_axoktq.png")
 
 akmel_special.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
 akmel_special.save!
@@ -209,10 +267,10 @@ Expresso_Gitwee = Coffee.new(
   flavor: "Sweet and citric, with notes of blood orange, dried cranberries and apricots and panela. Flavours of dried fruit",
   processing: "washed",
   user_id: user_milo.id,
-  brand_id: Nomand_coffee.id,
+  brand_id: Nomad_coffee.id,
   producer_id: Rtc.id
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678790173/E.RW_.GITW-1_auozcz.jpg")
 
 Expresso_Gitwee.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
 Expresso_Gitwee.save!
@@ -228,10 +286,10 @@ Filter_Ireme = Coffee.new(
   flavor: "A thick fragrance with notes of brownie, cherry, hazelnut and watermelon. This year Ireme brings a well-balanved cup with a silky body and a smooth acidity. Flavors of chocolate and plum",
   processing: "washed",
   user_id: user_milo.id,
-  brand_id: Nomand_coffee.id,
+  brand_id: Nomad_coffee.id,
   producer_id: Rtc.id
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678790247/F.RW_.IREM_.2023_lpo5bo.jpg")
 
 Filter_Ireme.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
 Filter_Ireme.save!
@@ -269,7 +327,7 @@ Hunkute = Coffee.new(
   brand_id: Drop_coffee.id,
   producer_id: Hunkute.id
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678797071/Tjd2Bia1NobwUfXuHlE3_552_hmossu.jpg")
 Hunkute.image.attach(io: file, filename: "hunkute.png", content_type: "image/png")
 Hunkute.save!
 
@@ -278,7 +336,7 @@ puts "Hunkute created"
 bukeye = Coffee.new(
   name: "Bukeye",
   brew_method: "omni",
-  brew_recipe: "WILL BE FILLED LATER",
+  brew_recipe: "We have used 15 grams of coffee and 260 grams of water, Add the water in two pours. First pour 60 gr, wait 30 seconds and right after pour the rest of the water until you reach 230gr. The total infusion time should be 2:00 minutes",
   origin: "Burundi",
   description: "Harvested from most complicated and remote areas of Burundi that one can source coffee from",
   flavor: "With dark fruits, spice, red tea, and an uplifting lemon acidity",
@@ -306,7 +364,7 @@ tomoca = Coffee.new(
   brand_id: tomoca.id,
   producer_id: wondwossen_meshesha.id
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678206408/z1woucvljlnkeqquu9ai.png")
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678797314/IMGL4658_lemymi.jpg")
 tomoca.image.attach(io: file, filename: "tomoca.png", content_type: "image/png")
 tomoca.save!
 
@@ -321,16 +379,37 @@ La_Pira = Coffee.new(
   flavor: "Pira has an aroma of cream and hazelnut. In the cup,
   you have flavour notes of chocolate spread, a hint of white tea and a cooling finish of black currant. ",
   processing: "honey",
-  user_id: user_simon.id,
+  user_id: user_bethy.id,
   brand_id: Drop_coffee.id,
   producer_id: Carlos_Ureña.id
 )
-file = URI.open("https://res.cloudinary.com/dak3altpj/image/upload/v1678202049/di8h9yqimowegc12ycie.png")
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678788554/Dubbelpackorginal_1024x1024_2x_thq7h3.jpg")
 
 La_Pira.image.attach(io: file, filename: "La Pira.png", content_type: "image/png")
 La_Pira.save!
 
 puts "La Pira created"
+
+Fruity_Colombia = Coffee.new(
+  name: "Fruity Colombia",
+  brew_method: "filter",
+  brew_recipe: "Minimum resting period: Filter 7 days / Espresso 14 days",
+  origin: "Colombia",
+  description: " thefirst controlled anaerobic fermentation, where a specific microorganism is added. The coffee is then depulped and goes through a second fermentation. Beans are then sealed with a
+  technique known as thermal shock (how water and cold water).",
+  flavor: "Aromas of blackberries, hibiscus and peach.This coffee is sweet and wild,
+  with notes of red fruits, lollipop and a strawberry candy finish. A mellow acidity and a smooth body",
+  processing: "washed",
+  user_id: user_simon.id,
+  brand_id: Nomad_coffee.id,
+  producer_id: Granja_Paraíso.id,
+)
+file = URI.open("https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678802552/da53caffe0271771fc03eb7a583a8ab7_k2cfzc.jpg")
+
+Fruity_Colombia.image.attach(io: file, filename: "lacabra.jpg", content_type: "image/png")
+Fruity_Colombia.save!
+
+puts "Fruity Colombia"
 
 puts "Creating chatrooms..."
 
