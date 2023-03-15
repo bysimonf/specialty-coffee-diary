@@ -193,7 +193,7 @@ gaspar_diaz_domingo = Producer.create!(
 puts "Creating coffees..."
 
 mustafa = Coffee.new(
-  name: "Mustafa",
+  name: "Mustafá",
   brew_method: "omni",
   brew_recipe: "Minimum resting period: Filter 7 days / Espresso 14 days",
   origin: "Colombia",
