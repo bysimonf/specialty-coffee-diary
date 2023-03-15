@@ -1,5 +1,5 @@
 Coffee.destroy_all
-User.destroy_all
+# User.destroy_all
 Brand.destroy_all
 Producer.destroy_all
 
