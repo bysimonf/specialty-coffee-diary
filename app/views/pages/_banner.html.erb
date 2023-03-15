@@ -1,7 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1507133750040-4a8f57021571?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvZmZlZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60);">
-  <div class="container">
-    <h2 class="mb-4">Did you just drink a very delicious cup of specialty coffee?</h2>
-    <h3 class="mb-4">Everyone loves exceptional coffee experiences. Therefore we help you never forget your favorite cups anymore.</h3>
+<div class="banner" >
+  <video autoplay muted loop class="video">
+    <source src="https://res.cloudinary.com/dak3altpj/video/upload/v1678872788/pexels-ron-lach-6938926_cfxnjl.mp4" type="video/mp4">
+    <%# <source src="https://res.cloudinary.com/dak3altpj/video/upload/v1678872773/pexels-cup-of-couple-6963730_incjsh.mp4" type="video/mp4"> %>
+  </video>
+  <div class="banner-content">
+    <h2 class="mb-4">Did you just drink a very delicious cup of coffee?</h2>
+    <h3 class="mb-4">We help you to never forget your favorite cups anymore.</h3>
     <%= render "coffees/search_form" %>
   </div>
 </div>
+<%# </div> %>
