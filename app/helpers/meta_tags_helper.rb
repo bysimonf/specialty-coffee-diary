@@ -13,3 +13,4 @@ module MetaTagsHelper
     meta_image.starts_with?("http") ? meta_image : image_url(meta_image)
   end
 end
+
