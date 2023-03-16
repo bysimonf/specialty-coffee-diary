@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "/about", to: "application#about"
+  get "/404", to: "application#404"
 
   # Define you application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :coffees, only: [:index, :show, :create, :new] do

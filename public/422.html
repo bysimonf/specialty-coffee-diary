@@ -11,45 +11,51 @@
     font-family: arial, sans-serif;
     margin: 0;
     background-image: url(https://res.cloudinary.com/dpzx0p4ei/image/upload/v1678886282/GettyImages-1165807395-2000-28ea3eaf72f34ddaa97d9a54ca0c6025_qnqizs.jpg);
+    display: flex;
+    background-image: lighten;
 
   }
 
   .rails-default-error-page div.dialog {
     width: 100%;
     align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
     margin: 4em auto 0;
     display: flex;
     position: absolute;
   }
 
   .dialog {
-color: black;
-
-align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 5px;
-
+    color: black;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
   }
-
-  .rails-default-error-page div.dialog > div {
+  .msg {
     border: 1px solid #CCC;
-
-  position: sticky;
-    border-bottom-color: #B00100 solid 4px;
-    border-top: #B00100 solid 4px;
-    border-bottom:  #B00100 solid 4px;
+    position: sticky;
     background-color:#f4f1e7;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
     margin-bottom: 5px;
+    width: 100%;
 
   }
+  .rails-default-error-page div.dialog > div {
+    border: 1px solid #CCC;
+    position: sticky;
+    background-color:#f4f1e7;
+    padding: 7px 12% 0;
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    margin-bottom: 5px;
+    width: 100%;
+    margin-top: 250px;
+  }
 
-  .rails-default-error-page h2 {
+  .rails-default-error-page h1 {
     font-size: 26px;
-
+    color: red;
   }
 
 
@@ -58,15 +64,12 @@ align-items: center;
 
 <body class="rails-default-error-page">
   <!-- This file lives in public/404.html -->
+  <div class="msg"><h1> 422 </h1> </div>
 
   <div class="dialog">
     <div>
-      <h2>The page you were looking for doesn't exist.   </h2>
-
-      <a href='coffees_path'>
-        <button class="btn-primary-cta btn">
-            home page
-        </button>
+      <h1>The change you wanted was rejected</h1>
+      <h2> Need coffee because adulting is hard ? <a href="https://www.specialty-coffee-diary.me" class="btn-primary-cta"> WeGotYou</a></h2>
     </div>
   </div>
 </body>
