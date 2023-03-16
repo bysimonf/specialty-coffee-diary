@@ -1,3 +1,33 @@
 .carousel-bg {
-  background-color: $background-white;
+    background-color: $background-white;
+ }
+.carousel-center{
+  display: flex !important;
+  justify-content: center !important;
+  width: 100%;
+}
+.carousel-title{
+  text-align: center;
+  padding: 8px 0;
+}
+
+@media (max-width: 700px) {
+  .carousel-bg  {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 700px) {
+  .carousel-bg  {
+    width: 80%;
+
+  }
+}
+
+@media (min-width: 900px) {
+  .carousel-bg  {
+    width: 60%;
+
+  }
+
 }

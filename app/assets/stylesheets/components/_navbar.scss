@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $background-white;
-  font-size: 32px;
+  font-size: 18px;
   color: $headers;
   border-bottom: 1px solid $lines-and-back-btns !important;
   margin-bottom: 6px;
@@ -37,19 +37,3 @@ a.navbar-brand > img {
 .nav-link {
   color: $headers;
 }
-
-/* .nav-link{
-  background-color: $background-white;;
-}
-.nav-link:after{
-  position: absolute;
-  background-color: $call-to-action;
-  height: 3px;
-  width: 0;
-  left: 0;
-  bottom: -10px;
-}
-.nav-link:hover:after{
-  width: 100%;
-}
- */
