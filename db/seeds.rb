@@ -149,6 +149,13 @@ hernàndez_family = Producer.create!(
   address: "Guatemala"
 )
 
+deivid_maicon_moreno = Producer.create!(
+  name: "Deivid Maicon Moreno",
+  description: "Deivid Maicon Moreno has a long family history in coffee, having grown up assisting his parents on their coffee farm. He is the fourth generation of his family to be involved with coffee, and is already starting to share his passion with his two daughters, Manuela and Lívia. David leased the land that became Novo Horizonte when he was only 18, and initially struggled due to his relative inexperience, but through years of hard work and commitment he has turned the farm into a feasible family business.",
+  address: "Brazil"
+)
+
+
 peter_dupont = Producer.create!(
   name: "Peter Dupont",
   description: "The Coffee Collective is to this day 100% owned and run by Peter N. Dupont,
