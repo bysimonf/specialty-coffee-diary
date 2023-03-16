@@ -1,6 +1,7 @@
 <%= link_to(coffees_path) do %>
   <i class="fas fa-arrow-left back-btn p-2"></i>
 <% end %>
+
 <div class="container chatroom", data-controller="chatroom-subscription"
 data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
   <div><h1><%= @chatroom.name%></h1></div>
@@ -9,7 +10,7 @@ data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"  data-chatroo
       <%# <div class="user"> %>
         <%= current_user.username %>
         <%# <%= @users.first.username %>
-         <% @users.each do |user| %>
+        <% @users.each do |user| %>
           <div class="user">
             <%= user.username %>
           </div>
