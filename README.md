@@ -1,1 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# Specialty Coffee Diary
+
+☕️ Specialty Coffee Diary is a mobile-first web app to search for your favorite coffees by brands, flavor etc.
